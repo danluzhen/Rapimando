@@ -1,0 +1,28 @@
+<form class="form-horizontal" role="form" name="giftForm" novalidate>
+  <div class="form-group">
+    <label class="control-label col-sm-3">Gift:</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" placeholder="Gift" required ng-model="giftName">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">Gift code:</label>
+    <div class="col-sm-9">
+      <input type="text" required class="form-control" placeholder="Gift code" ng-model="giftCode">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">Site:</label>
+    <div class="col-sm-9">
+      <select class="form-control" ng-model="giftSite">
+        <option value="">Site</option>
+        <option ng-repeat="site in sites" value="{{site.id}}">{{site.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <button type="submit" class="btn btn-primary" ng-disabled="giftForm.$invalid" ng-click="submitForm()">Save</button>
+    </div>
+  </div>
+</form>

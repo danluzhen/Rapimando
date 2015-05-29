@@ -1,0 +1,18 @@
+<bn-nav-bar></bn-nav-bar>
+<div class="col-md-12">
+  <h4>Setting</h4>
+  <p>
+    <a href ng-click="$broadcast('showModal', 'setupDistance')">Geo fence settings</a>
+  </p>
+</div>
+<bn-modal modal-id="'setupDistance'" title="'Setup Distance'">
+  <div class="form-inline">
+    <div class="form-group">
+      <input type="number" class="form-control" ng-model="setting.distance"> Miles- Geo Fence Radius default setting
+    </div>
+  </div>
+  <div style="margin-top: 10px">
+    <button type="submit" class="btn btn-primary" ng-click="saveDistance()">Save</button>
+  </div>
+
+</bn-modal>

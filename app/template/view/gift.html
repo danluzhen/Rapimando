@@ -1,0 +1,70 @@
+<bn-nav-bar></bn-nav-bar>
+<div class="col-md-12">
+  <h4>
+    Gift
+    <div style="display: inline-block; margin-left: 10px;">
+      <form class="form-inline">
+        <div class="form-group">
+          <button class="btn btn-success btn-sm" ng-click="showGift()"><i class="fa fa-plus fa-fw"></i> Create Gift</button>
+        </div>
+      </form>
+    </div>
+  </h4>
+  <bn-modal modal-id="'saveGift'" title="'Save Gift'">
+    <bn-save-gift gift="giftToSave" on-done="onSaveGift"></bn-save-gift>
+  </bn-modal>
+
+  <div class="table-responsive">
+    <table class="table table-condensed table-hover" style="width: auto;">
+      <thead>
+        <tr>
+          <th>Gift</th>
+          <th>Code</th>
+          <th>Site</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="gift in gifts">
+          <td>
+            {{ gift.gift }}
+          </td>
+          <td>
+            {{ gift.code }}
+          </td>
+          <td>
+            {{ gift.site.name }}
+          </td>
+          <td>
+            <a href ng-click="editGift(gift)">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </td>
+          <td>
+            <a href ng-click="showDeleteGift(gift)">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <bn-pagination page="params.page" per-page="perPage" total="params.total"></bn-pagination>
+  </div>
+</div>
+<!--Modal image invalid-->
+<bn-modal modal-id="'modalImageError'" title="'Error'">
+  <span>{{params.errorMessage}}</span>
+  <div style="margin-top: 15px">
+    <button class="btn btn-primary" ng-click="closeModalImageError()">OK</button>
+  </div>
+</bn-modal>
+
+<!-- Modal delete post -->
+<bn-modal modal-id="'deleteGift'" title="'Delete Gift'">
+  <h4>Are you sure you want to delete "{{ giftToDelete.gift }}" gift?</h4>
+  <div>
+    <button class="btn btn-danger btn-sm" ng-click="deleteGift()">Delete</button>
+    <button class="btn btn-default btn-sm" ng-click="deleteGiftCancel()">Cancel</button>
+  </div>
+</bn-modal>

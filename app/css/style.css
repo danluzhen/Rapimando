@@ -1,0 +1,54 @@
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+  font: normal 14px 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  padding-top: 70px;
+}
+a {
+  color: #333;
+}
+a:hover {
+  color: #000;
+}
+.disabled a {
+  color: #CCC;
+}
+h4 {
+  margin-top: 0;
+}
+.progress-bar {
+  min-width: 8px;
+}
+/* Navbar */
+.navbar {
+  z-index: 10;
+  opacity: 0.97;
+  background-color: #FFF;
+  border-radius: 0 !important;
+  margin-bottom: 15px !important;
+  border-bottom: 1px solid #E3E6E6 !important;
+}
+.navbar-header {
+  padding: 0 !important;
+}
+
+.navbar .icon{
+    width: 16px;
+}
+/* Bootstrap */
+.dropdown-menu {
+  border-radius: 0 !important;
+}
+.panel {
+  border-radius: 0 !important;
+}
+.input-smaller input {
+  max-width: 80px;
+}
+.active{
+  background: #f5f5f5;
+}
+
+/* Custom bootstrap */
+.input-sm {
+  padding: 5px 8px !important;
+}

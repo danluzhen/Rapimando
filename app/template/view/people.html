@@ -1,0 +1,59 @@
+<bn-nav-bar></bn-nav-bar>
+<div class="col-md-12">
+  <h4>
+    People
+    <div style="display: inline-block; margin-left: 10px;">
+      <form class="form-inline">
+        <div class="form-group">
+          <button class="btn btn-success btn-sm" ng-click="showPeople()"><i class="fa fa-plus fa-fw"></i> Add people</button>
+        </div>
+      </form>
+    </div>
+  </h4>
+
+  <!--<bn-modal modal-id="'savePeople'" title="'Save People'">-->
+    <!--&lt;!&ndash;<bn-save-gift gift="giftToSave" on-done="onSaveGift"></bn-save-gift>&ndash;&gt;-->
+  <!--</bn-modal>-->
+
+  <div class="table-responsive">
+    <table class="table table-condensed table-hover" style="width: auto;">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Gender</th>
+          <th>Country</th>
+          <th>Address</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in users">
+          <td>
+            {{ user.first_name }}
+          </td>
+          <td>
+            {{ user.email }}
+          </td>
+          <td>
+            {{ user.mobile }}
+          </td>
+          <td>
+            {{ user.gender }}
+          </td>
+          <td>
+            {{ user.country }}
+          </td>
+          <td>
+            {{ user.address }}
+          </td>
+          <td>
+            <bn-user-status user="user"></bn-user-status>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <bn-pagination page="params.page" per-page="perPage" total="params.total"></bn-pagination>
+  </div>
+</div>

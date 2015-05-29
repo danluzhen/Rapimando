@@ -1,0 +1,66 @@
+<bn-nav-bar></bn-nav-bar>
+<div class="col-md-12">
+  <h4>
+    Price
+    <div style="display: inline-block; margin-left: 10px;">
+      <form class="form-inline">
+        <div class="form-group">
+          <button class="btn btn-success btn-sm" ng-click="showPrice()"><i class="fa fa-plus fa-fw"></i> Create Price</button>
+        </div>
+      </form>
+    </div>
+  </h4>
+  <bn-modal modal-id="'savePrice'" title="'Save Price'">
+    <bn-save-price price="priceToSave" on-done="onSavePrice"></bn-save-price>
+  </bn-modal>
+
+  <div class="table-responsive">
+    <table class="table table-condensed table-hover" style="width: auto;">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Currency code</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="price in prices">
+          <td>
+            {{ price.name }}
+          </td>
+          <td>
+            {{ price.currency_code }}
+          </td>
+          <td>
+            <a href ng-click="editPrice(price)">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </td>
+          <td>
+            <a href ng-click="showDeletePrice(price)">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <bn-pagination page="params.page" per-page="perPage" total="params.total"></bn-pagination>
+  </div>
+</div>
+<!--Modal image invalid-->
+<bn-modal modal-id="'modalImageError'" title="'Error'">
+  <span>{{params.errorMessage}}</span>
+  <div style="margin-top: 15px">
+    <button class="btn btn-primary" ng-click="closeModalImageError()">OK</button>
+  </div>
+</bn-modal>
+
+<!-- Modal delete post -->
+<bn-modal modal-id="'deletePrice'" title="'Delete Price'">
+  <h4>Are you sure you want to delete "{{ priceToDelete.name }}" price?</h4>
+  <div>
+    <button class="btn btn-danger btn-sm" ng-click="deletePrice()">Delete</button>
+    <button class="btn btn-default btn-sm" ng-click="deletePriceCancel()">Cancel</button>
+  </div>
+</bn-modal>

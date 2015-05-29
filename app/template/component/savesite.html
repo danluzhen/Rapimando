@@ -1,0 +1,58 @@
+<form class="form-horizontal" role="form" name="siteForm" novalidate>
+  <div class="form-group">
+    <label class="control-label col-sm-3">Name:</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" placeholder="Name" required ng-model="siteName">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">Country:</label>
+    <div class="col-sm-9">
+      <input type="text" required class="form-control" placeholder="Country" ng-model="siteCountry">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">Locale:</label>
+    <div class="col-sm-9">
+      <input type="text" required class="form-control" placeholder="Locale" ng-model="siteLocale">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">Area code:</label>
+    <div class="col-sm-9">
+      <input type="text" required class="form-control" placeholder="Area code" ng-model="siteAreaCode">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">Latitude:</label>
+    <div class="col-sm-9">
+      <input type="number" required class="form-control" min="-90" max="90" placeholder="Latitude" ng-model="siteLatitude">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">Longitude:</label>
+    <div class="col-sm-9">
+      <input type="number" required class="form-control" min="-180" max="180" placeholder="Longitude" ng-model="siteLongitude">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">Gateway:</label>
+    <div class="col-sm-9">
+      <input type="text" required class="form-control" placeholder="Gateway" ng-model="siteGateway">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">Price:</label>
+    <div class="col-sm-9">
+      <select class="form-control" ng-model="sitePrice">
+        <option value="">Price</option>
+        <option ng-repeat="price in prices" value="{{price.id}}">{{price.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <button type="submit" class="btn btn-primary" ng-disabled="siteForm.$invalid" ng-click="submitForm()">Save</button>
+    </div>
+  </div>
+</form>

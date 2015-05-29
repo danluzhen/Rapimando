@@ -1,0 +1,82 @@
+<bn-nav-bar></bn-nav-bar>
+<div class="col-md-12">
+  <h4>
+    Site
+    <div style="display: inline-block; margin-left: 10px;">
+      <form class="form-inline">
+        <div class="form-group">
+          <button class="btn btn-success btn-sm" ng-click="showSite()"><i class="fa fa-plus fa-fw"></i> Create Site</button>
+        </div>
+      </form>
+    </div>
+  </h4>
+  <bn-modal modal-id="'saveSite'" title="'Save Site'">
+    <bn-save-site site="siteToSave" on-done="onSaveSite"></bn-save-site>
+  </bn-modal>
+
+  <div class="table-responsive">
+    <table class="table table-condensed table-hover" style="width: auto;">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Country</th>
+          <th>Locale</th>
+          <th>Area code</th>
+          <th>Gateway</th>
+          <th>Price</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="site in sites">
+          <td>
+            {{ site.name }}
+          </td>
+          <td>
+            {{ site.country }}
+          </td>
+          <td>
+            {{ site.locale }}
+          </td>
+          <td>
+            {{ site.area_code }}
+          </td>
+          <td>
+            {{ site.gateway }}
+          </td>
+          <td>
+            {{ site.price.name }}
+          </td>
+          <td>
+            <a href ng-click="editSite(site)">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </td>
+          <td>
+            <a href ng-click="showDeleteSite(site)">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <bn-pagination page="params.page" per-page="perPage" total="params.total"></bn-pagination>
+  </div>
+</div>
+<!--Modal image invalid-->
+<bn-modal modal-id="'modalImageError'" title="'Error'">
+  <span>{{params.errorMessage}}</span>
+  <div style="margin-top: 15px">
+    <button class="btn btn-primary" ng-click="closeModalImageError()">OK</button>
+  </div>
+</bn-modal>
+
+<!-- Modal delete post -->
+<bn-modal modal-id="'deleteSite'" title="'Delete Site'">
+  <h4>Are you sure you want to delete "{{ siteToDelete.name }}" Site?</h4>
+  <div>
+    <button class="btn btn-danger btn-sm" ng-click="deleteSite()">Delete</button>
+    <button class="btn btn-default btn-sm" ng-click="deleteSiteCancel()">Cancel</button>
+  </div>
+</bn-modal>

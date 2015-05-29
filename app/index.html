@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="RapimandadoApp">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- JS -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <script src="/js/libs/angular-route.js"></script>
+  <script src="/js/libs/angular-resource.js"></script>
+  <script src="/js/libs/ui-bootstrap-tpls-0.11.2.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/conf.js"></script>
+
+  <!-- Controller -->
+  <script src="/js/controllers/appctrl.js"></script>
+  <script src="/js/controllers/frontendctrl.js"></script>
+  <script src="/js/controllers/sitectrl.js"></script>
+  <script src="/js/controllers/pricectrl.js"></script>
+  <script src="/js/controllers/giftctrl.js"></script>
+  <script src="/js/controllers/peoplectrl.js"></script>
+  <script src="/js/controllers/settingctrl.js"></script>
+  <script src="/js/controllers/userctrl.js"></script>
+
+  <!-- Component -->
+  <script src="/js/component/navbar.js"></script>
+  <script src="/js/component/modal.js"></script>
+  <script src="/js/component/saveprice.js"></script>
+  <script src="/js/component/savesite.js"></script>
+  <script src="/js/component/savegift.js"></script>
+  <script src="/js/component/saveuser.js"></script>
+  
+  <script src="/js/component/userstatus.js"></script>
+
+  <title ng-bind="'Rapimandado ' + title"></title>
+</head>
+
+<body>
+<div ng-view></div>
+</body>
+</html>
